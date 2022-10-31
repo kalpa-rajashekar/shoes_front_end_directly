@@ -1,0 +1,22 @@
+<p>add-shoes works!</p>
+<h1>Add Shoes Admin</h1>
+
+<form>
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Shoe Name" name="name" [(ngModel)]="shoe.name" >
+
+ 
+ 
+
+  <label for="author">Price</label>
+  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="shoe.price">
+
+
+
+    <br>
+    <input type="file" (change)="onFileChanged($event)">
+    <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+
+  <br>
+  <button type="button" class="btn btn-success" (click)="saveShoes()">Save Shoes</button>
+</form>

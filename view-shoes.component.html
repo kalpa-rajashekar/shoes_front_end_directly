@@ -1,0 +1,23 @@
+<p>view-shoes works!</p>
+<h1>Shoe Details</h1>
+
+    <table>
+        <tr>
+            <td>Shoes Id</td>
+            <td>{{shoe.id}}</td>
+        </tr>
+        <tr>
+            <td>Shoes Name</td>
+            <td>{{shoe.name}}</td>
+        </tr>
+        
+        <tr>
+            <td>Shoes Price</td>
+            <td>{{shoe.price}}</td>
+        </tr>
+    </table>
+    <br>
+    <img src="{{shoe.retrievedImage}}" height="200" width="200">
+    <br><br>
+   
+    <a class="btn btn-small btn-danger" (click)="deleteShoes()">delete</a>

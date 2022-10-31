@@ -1,0 +1,30 @@
+<p>shoes works!</p>
+<h1>shoes Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addShoes()">Add New Shoes</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Shoes Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shoe of shoes">
+          <td>{{shoe.id}}</td>
+          <td>{{shoe.name}}</td>
+          <td>
+            
+            <button type="button" class="btn btn-primary" (click)="viewShoes(shoe.id)"> Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-add-shoes *ngIf="action === 'add'" [shoe]="selectedShoes" (shoeAddedEvent)="refreshData()"></app-add-shoes>
+    <app-view-shoes *ngIf="action === 'view'" [shoe]="selectedShoes"(shoeDeletedEvent)="refreshData()"></app-view-shoes>
+  </div>
+</div>
